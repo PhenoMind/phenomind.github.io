@@ -76,24 +76,31 @@ p.lead{font-size:18px;color:#404458;margin:0 0 10px}
   font-size:12px;font-weight:700;color:var(--text);
 }
 
-/* Place cards to mimic the slide on wide screens */
+/* Desktop layout: 4-column grid
+   Row1: items 1–2 centered in cols 2 & 3
+   Row2: items 3–6 fill cols 1–4
+   Row3: advisor spans cols 2–3 (centered) */
 @media (min-width:900px){
-  .team-grid{grid-template-columns:repeat(10,1fr)}
-  .team-grid > li:nth-child(1){grid-column:1 / span 2}
-  .team-grid > li:nth-child(2){grid-column:3 / span 2}
-  .team-grid > li:nth-child(3){grid-column:5 / span 2}
-  .team-grid > li:nth-child(4){grid-column:7 / span 2}
-  .team-grid > li:nth-child(5){grid-column:9 / span 2}
-  .team-grid > li:nth-child(6){grid-column:2 / span 2} /* second-row left card */
-  .team-grid > li.advisor{grid-column:5 / span 2;margin-top:8px} /* centered advisor */
+  .team-grid{ grid-template-columns: repeat(4, 1fr); }
+
+  /* reset any previous explicit placement */
+  .team-grid > li{ grid-column: auto; }
+
+  /* row 1 — cofounders centered */
+  .team-grid > li:nth-child(1){ grid-column: 2; }
+  .team-grid > li:nth-child(2){ grid-column: 3; }
+
+  /* row 3 — advisor centered and wider */
+  .team-grid > li.advisor{ grid-column: 2 / span 2; margin-top: 8px; }
 }
 
-/* Mobile/tablet: simple 2-col grid */
+/* Mobile/tablet keeps the simple 2-col grid */
 @media (max-width:900px){
-  .team-grid{grid-template-columns:1fr 1fr}
-  .person-card .avatar{width:110px;height:110px}
-  .team-grid > li.advisor{grid-column:1 / -1}
+  .team-grid{ grid-template-columns: 1fr 1fr; }
+  .person-card .avatar{ width:110px; height:110px; }
+  .team-grid > li.advisor{ grid-column: 1 / -1; }
 }
+
 
 /* === Solution section layout & bits === */
 .two-col{
