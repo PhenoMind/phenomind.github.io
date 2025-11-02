@@ -95,3 +95,83 @@ p.lead{font-size:18px;color:#404458;margin:0 0 10px}
   .team-grid > li.advisor{grid-column:1 / -1}
 }
 
+/* === Solution section layout & bits === */
+.two-col{
+  display:grid;
+  grid-template-columns: 1.25fr 1fr;   /* text : illustration */
+  gap:28px;
+  align-items:start;
+}
+@media (max-width:900px){
+  .two-col{ grid-template-columns: 1fr; }
+}
+
+/* bullets + badges */
+#solution ul.check{ margin:10px 0 16px; padding-left:1.2rem; }
+#solution ul.check li{ margin:6px 0; }
+#solution .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+#solution .badge{
+  display:inline-block;
+  padding:6px 10px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  font-weight:700;
+  font-size:12px;
+}
+
+/* illustration column */
+#solution .illus{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+#solution .stack{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  min-width:180px;
+}
+
+#solution .chip{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:6px 12px;
+  font-weight:600;
+  box-shadow:0 2px 10px rgba(20,30,70,.04);
+}
+
+#solution .arrow{
+  font-size:28px;
+  line-height:1;
+  color:var(--muted);
+}
+
+/* fake console card */
+#solution .console{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:12px;
+  width:100%;
+  max-width:320px;
+  box-shadow:0 2px 10px rgba(20,30,70,.04);
+}
+#solution .console > .dot{
+  width:8px;height:8px;border-radius:50%;
+  background:var(--border);
+  display:inline-block;margin:10px 4px 0 10px;
+}
+#solution .console-body{ padding:10px 12px 12px; }
+#solution .console-body .row{
+  display:flex; align-items:center; gap:8px;
+  padding:8px 0;
+  border-top:1px dashed var(--border);
+}
+#solution .console-body .row:first-child{ border-top:none; }
+#solution .pill{
+  width:18px;height:8px;border-radius:999px;background:var(--primary);
+}
