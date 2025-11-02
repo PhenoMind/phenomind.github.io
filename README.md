@@ -1,2 +1,1 @@
-# phenomind.github.io
-Website for PhenoMind
+# PhenoMind website
