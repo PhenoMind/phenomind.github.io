@@ -26,6 +26,59 @@ html,body{
 .section{ padding:64px 0; }
 .section.alt{ background:var(--alt); }
 
+/* Hero section styling */
+.hero-section{ 
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+  position: relative;
+  padding-bottom: 0;
+}
+
+.hero-separator {
+  height: 120px;
+  background: linear-gradient(180deg, 
+    rgba(55, 86, 226, 0.08) 0%, 
+    rgba(55, 182, 246, 0.05) 50%, 
+    rgba(255, 255, 255, 0) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-separator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" fill="none"><path d="M0,10 Q25,0 50,10 T100,10 V20 H0 Z" fill="rgba(55,86,226,0.03)"/></svg>') repeat-x;
+  background-size: 200px 100%;
+}
+
+/* Problem section styling */
+.problem-section {
+  background: #ffffff;
+  padding-top: 80px;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-intro h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
 header,footer{ background:#fff; border-bottom:1px solid var(--border); }
 footer{ border-top:1px solid var(--border); text-align:center; padding:18px 0; margin-top:24px; }
 
@@ -59,6 +112,18 @@ p.lead{ font-size:18px; color:#404458; margin:0 0 10px; }
 .card{
   background:#fff; border:1px solid var(--border); border-radius:16px;
   padding:18px; box-shadow:0 2px 10px rgba(20,30,70,.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(20,30,70,.08);
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 0 0 12px;
+  color: var(--text);
 }
 
 /* Timeline (kept minimal) */
